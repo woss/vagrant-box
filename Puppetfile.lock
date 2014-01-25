@@ -1,0 +1,58 @@
+FORGE
+  remote: http://forge.puppetlabs.com
+  specs:
+    puppetlabs/stdlib (4.1.0)
+
+GIT
+  remote: git@github.com:puppetlabs/puppetlabs-apt.git
+  ref: 1.4.0
+  sha: 924e89289b93db60ef0f16a4e71579fa88e037a6
+  specs:
+    apt (1.4.0)
+      puppetlabs/stdlib (>= 2.2.1)
+
+GIT
+  remote: git@github.com:puppetlabs/puppetlabs-git.git
+  ref: 0.0.3
+  sha: faf74215e9f3e30178e3170373e549b5bc0dc38f
+  specs:
+    git (0.0.3)
+
+GIT
+  remote: git@github.com:puppetlabs/puppetlabs-ntp.git
+  ref: master
+  sha: 5e6aecb76b52312c0ef1c8bbc0155d5870ea4526
+  specs:
+    ntp (3.0.1)
+      puppetlabs/stdlib (>= 0.1.6)
+
+GIT
+  remote: git@github.com:puppetlabs/puppetlabs-stdlib.git
+  ref: master
+  sha: 2c8450d830453e452b819bfb05678768336c3031
+  specs:
+    stdlib (4.1.0)
+
+GIT
+  remote: git@github.com:stankevich/puppet-python.git
+  ref: master
+  sha: 28c08f47ec6fce17f9f3e80385ed7e517fb1661b
+  specs:
+    python (1.6.2)
+
+GIT
+  remote: git@github.com:woss/puppet-toolbox.git
+  ref: 0.0.2
+  sha: 98b0fae4b35fc8d811ee7834fd35f2efd715e6fe
+  specs:
+    toolbox (0.0.1)
+
+DEPENDENCIES
+  apt (>= 0)
+  apt (>= 0)
+  git (>= 0)
+  ntp (>= 0)
+  python (>= 0)
+  stdlib (>= 0)
+  toolbox (>= 0)
+

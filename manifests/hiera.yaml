@@ -1,0 +1,8 @@
+---
+:backends:
+  - json
+:json:
+  :datadir: /tmp/vagrant-puppet-1/manifests/hiera-data
+:hierarchy:
+  - common
+:logger: console
