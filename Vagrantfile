@@ -15,23 +15,23 @@ end
 
 Vagrant.configure(2) do |config|
   default = "precise64_vmware"
-
+  config.vm.box_url = "http://files.vagrantup.com/"+default+".box"
+  
   # Torrent Box
-  config.vm.define "torrent" do |web|
-    config.vm.box = default
-    config.vm.box.url = "http://files.vagrantup.com/"+default+".box"
-      config.vm.hostname = "torrent-master"
-      config.vm.network "private_network", :ip => "77.77.77.77"
-      config.vm.network "forwarded_port", guest: 9091, host: 9092
-      config.vm.synced_folder "movies" , "/var/movies"
-      ### Puppet provision
-      # config.vm.provision :puppet do |puppet|
-      #   puppet.options = "--debug"
-      #   puppet.hiera_config_path = "manifests/hiera.yaml"
-      #   puppet.manifests_path = "manifests"
-      #   puppet.manifest_file  = "default.pp"
-      #   puppet.module_path = "modules"
-      # end
+  config.vm.define "torrent" do |tor|
+    tor.vm.box = default
+    tor.vm.hostname = "torrent-master"
+    tor.vm.network "private_network", :ip => "77.77.77.77"
+    tor.vm.network "forwarded_port", guest: 9091, host: 9092
+    tor.vm.synced_folder "movies" , "/var/movies"
+    ### Puppet provision
+    tor.vm.provision :puppet do |puppet|
+      puppet.options = "--debug"
+      puppet.hiera_config_path = "manifests/hiera.yaml"
+      puppet.manifests_path = "manifests"
+      puppet.manifest_file  = "torrent.pp"
+      puppet.module_path = "modules"
+    end
   end
   
 
