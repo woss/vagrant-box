@@ -31,6 +31,9 @@ Vagrant.configure(2) do |config|
       puppet.manifests_path = "manifests"
       puppet.manifest_file  = "torrent.pp"
       puppet.module_path = "modules"
+       puppet.facter = {
+         "box" => "torrent",
+        }
     end
   end
   
@@ -43,9 +46,5 @@ Vagrant.configure(2) do |config|
       s.args   = "echo I am provisioning..."
       s.inline   = "ifconfig | grep 'inet addr:'"
     end
-    
-    
-    
-
   end
 end
