@@ -15,26 +15,26 @@ end
 
 Vagrant.configure(2) do |config|
   default = "precise64_vmware"
-  config.vm.box_url = "http://files.vagrantup.com/"+default+".box"
+  # config.vm.box_url = "http://files.vagrantup.com/"+default+".box"
   
   # Database box
   config.vm.define "database" do |vm|
-    ip = "10.6.0.2"
+    ip = "192.168.3.2"
     vm.vm.box = default
-    vm.vm.hostname = "vmrent-master"
+    vm.vm.hostname = "database"
     vm.vm.network "private_network", :ip => ip
-    vm.vm.synced_folder "movies" , "/var/movies"
     ### Puppet provision
     vm.vm.provision :puppet do |puppet|
       puppet.options = "--debug"
       puppet.hiera_config_path = "manifests/hiera.yaml"
       puppet.manifests_path = "manifests"
-      # puppet.manifest_file  = "database.pp"
+      puppet.manifest_file  = "boxes/database.pp"
       puppet.module_path = "modules"
-       puppet.facter = {
-         "box" => "database",
-         "ip" => ip
-        }
+      puppet.facter = {
+        "box" => "database",
+        "ip" => ip
+      }
+      puppet.working_directory = "/tmp/vagrant-puppet"
     end
   end
 
@@ -43,16 +43,16 @@ Vagrant.configure(2) do |config|
   config.vm.define "torrent" do |vm|
     ip = "10.6.0.3"
     vm.vm.box = default
-    vm.vm.hostname = "vmrent-master"
+    vm.vm.hostname = "torrent-master"
     vm.vm.network "private_network", :ip => ip
-    vm.vm.network "forwarded_port", guest: 9091, host: 9092
-    vm.vm.synced_folder "movies" , "/var/movies"
+    # vm.vm.network "forwarded_port", guest: 9091, host: 9092
+    vm.vm.synced_folder "mount/movies" , "/var/movies"
     ### Puppet provision
     vm.vm.provision :puppet do |puppet|
       puppet.options = "--debug"
       puppet.hiera_config_path = "manifests/hiera.yaml"
       puppet.manifests_path = "manifests"
-      puppet.manifest_file  = "torrent.pp"
+      puppet.manifest_file  = "boxes/torrent.pp"
       puppet.module_path = "modules"
        puppet.facter = {
          "box" => "torrent",

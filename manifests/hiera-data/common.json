@@ -1,5 +1,7 @@
 {
   "classes": [
+    "apt",
     "git"
-  ]
+  ],
+  "apt::always_apt_update": true
 }
