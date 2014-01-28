@@ -21,6 +21,13 @@ mod 'apt',
   :git => "git@github.com:puppetlabs/puppetlabs-apt.git",
   :ref => '1.4.0'
 
- mod 'git',
+mod 'git',
   :git => 'git@github.com:puppetlabs/puppetlabs-git.git',
   :ref => '0.0.3'
+
+mod 'mysql', 
+  :git => "git@github.com:puppetlabs/puppetlabs-mysql.git",
+  :ref => "2.1.0"
+mod 'nodejs',
+  :git => "git@github.com:puppetlabs/puppetlabs-nodejs.git",
+  :ref => "0.3.0"

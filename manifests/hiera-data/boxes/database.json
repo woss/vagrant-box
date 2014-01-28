@@ -1,0 +1,18 @@
+{
+  "databases": {},
+  "classes": [
+    "mysql::server",
+    "mysql::client"
+  ],
+  "mysql::server::root_password": "root",
+  "mysql::server::override_options": {
+    "mysqld": {
+      "max_connections": "1024",
+      "bind_address": "%{::ip}"
+    }
+  },
+  "mysql_default_user": {
+    "username": "root",
+    "password": "root"
+  }
+}
