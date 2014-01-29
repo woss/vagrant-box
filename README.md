@@ -27,7 +27,7 @@ Lifts up database box on designated IP (192.168.3.2), if you want to change it, 
 
 to something else.
 
-Installs following:
+It contains following:
 * MySQL 5.5.35
 	* Port ```3306```
 	* Socket ```/var/run/mysqld/mysqld.sock```
