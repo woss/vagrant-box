@@ -2,7 +2,7 @@
 :backends:
   - json
 :json:
-  :datadir: /tmp/vagrant-puppet-1/manifests/hiera-data
+  :datadir: manifests/hiera-data
 :hierarchy:
   - "boxes/%{::box}"
   - common
