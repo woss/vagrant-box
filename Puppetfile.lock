@@ -21,6 +21,15 @@ GIT
     git (0.0.3)
 
 GIT
+  remote: git@github.com:puppetlabs/puppetlabs-mongodb.git
+  ref: 0.7.0
+  sha: c5e672581664c326b9f0dc4071d9d79c764e40cc
+  specs:
+    mongodb (0.7.0)
+      puppetlabs/apt (>= 1.0.0)
+      puppetlabs/stdlib (>= 2.2.0)
+
+GIT
   remote: git@github.com:puppetlabs/puppetlabs-mysql.git
   ref: 2.1.0
   sha: e303e361b7a1e7c1a808e92a02a8eacaaac3a498
@@ -70,6 +79,7 @@ DEPENDENCIES
   apt (>= 0)
   apt (>= 0)
   git (>= 0)
+  mongodb (>= 0)
   mysql (>= 0)
   nodejs (>= 0)
   ntp (>= 0)

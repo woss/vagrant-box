@@ -2,8 +2,13 @@
   "databases": {},
   "classes": [
     "mysql::server",
-    "mysql::client"
+    "mysql::client",
+    "::mongodb::server",
+    "::mongodb::client"
   ],
+  "::mongodb::server::port": 27018,
+  "::mongodb::server::bind_ip": "%{::ip}",
+  "::mongodb::server::verbose": true,
   "mysql::server::root_password": "root",
   "mysql::server::override_options": {
     "mysqld": {

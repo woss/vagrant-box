@@ -28,6 +28,11 @@ mod 'git',
 mod 'mysql', 
   :git => "git@github.com:puppetlabs/puppetlabs-mysql.git",
   :ref => "2.1.0"
+
 mod 'nodejs',
   :git => "git@github.com:puppetlabs/puppetlabs-nodejs.git",
   :ref => "0.3.0"
+
+mod 'mongodb',
+  :git => "git@github.com:puppetlabs/puppetlabs-mongodb.git",
+  :ref => "0.7.0"
