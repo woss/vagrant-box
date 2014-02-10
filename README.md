@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/woss/vagrant-box.png?label=ready)](https://waffle.io/woss/vagrant-box)
 # Multipurpose Vagrant box
 
 Goal is to create multipurpose vagrant box, using puppet and hiera.
