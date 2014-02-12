@@ -3,6 +3,9 @@ FORGE
   specs:
     puppetlabs/apt (1.4.0)
       puppetlabs/stdlib (>= 2.2.1)
+    puppetlabs/concat (1.1.0-rc1)
+      puppetlabs/stdlib (>= 3.0.0)
+    puppetlabs/firewall (1.0.0)
     puppetlabs/stdlib (4.1.0)
 
 GIT
@@ -66,6 +69,17 @@ GIT
   specs:
     toolbox (0.0.1)
 
+GIT
+  remote: https://github.com/puppetlabs/puppetlabs-postgresql.git
+  ref: 3.3.0
+  sha: b99094b24862c94108a1f3579f28edb2df664a3b
+  specs:
+    postgresql (3.3.0)
+      puppetlabs/apt (< 2.0.0, >= 1.1.0)
+      puppetlabs/concat (< 2.0.0, >= 1.0.0)
+      puppetlabs/firewall (>= 0.0.4)
+      puppetlabs/stdlib (< 5.0.0, >= 3.2.0)
+
 DEPENDENCIES
   apt (>= 0)
   apt (>= 0)
@@ -73,6 +87,7 @@ DEPENDENCIES
   mysql (>= 0)
   nodejs (>= 0)
   ntp (>= 0)
+  postgresql (>= 0)
   python (>= 0)
   stdlib (>= 0)
   toolbox (>= 0)
