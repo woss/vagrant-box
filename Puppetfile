@@ -31,3 +31,7 @@ mod 'mysql',
 mod 'nodejs',
   :git => "git@github.com:puppetlabs/puppetlabs-nodejs.git",
   :ref => "0.3.0"
+  
+mod 'postgresql',
+  :git => 'https://github.com/puppetlabs/puppetlabs-postgresql.git',
+  :ref => '3.3.0'

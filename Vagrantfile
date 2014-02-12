@@ -34,7 +34,7 @@ Vagrant.configure(2) do |config|
         "box" => "database",
         "ip" => ip
       }
-      puppet.working_directory = "/tmp/vagrant-puppet"
+      puppet.working_directory = "/vagrant"
     end
   end
 

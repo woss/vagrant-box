@@ -2,7 +2,8 @@
   "databases": {},
   "classes": [
     "mysql::server",
-    "mysql::client"
+    "mysql::client",
+    "postgresql::server"
   ],
   "mysql::server::root_password": "root",
   "mysql::server::override_options": {
@@ -14,5 +15,13 @@
   "mysql_default_user": {
     "username": "root",
     "password": "root"
-  }
+  },
+  "postgresql::server": {
+      "ip_mask_deny_postgres_user" : "%{::ip}/32",
+      "ip_mask_allow_all_users" : "%{::ip}/0",
+      "listen_addresses" : "*",
+      "ipv4acls" : ["hostssl all johndoe %{::ip}/24 cert"],
+      "manage_firewall" : true,
+      "postgres_password" : "root"
+    }
 }
