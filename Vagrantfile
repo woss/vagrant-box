@@ -23,6 +23,7 @@ Vagrant.configure(2) do |config|
     vm.vm.box = default
     vm.vm.hostname = "database"
     vm.vm.network "private_network", :ip => ip
+    
     ### Puppet provision
     vm.vm.provision :puppet do |puppet|
       puppet.options = "--debug"
